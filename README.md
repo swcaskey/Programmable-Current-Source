@@ -19,7 +19,7 @@ An adjustable, precision current source designed for test bench and calibration 
 
 ## Documentation
 Testing photos, schematic captures, and performance data:  
-[Google Photos Album](https://photos.app.goo.gl/ThNHLy9iuzCLFQ5C7)
+- [Google Photos Album](https://photos.app.goo.gl/ThNHLy9iuzCLFQ5C7)
 
 ## Author
 Created by **Seth Caskey** — Rutgers University, 2025.
