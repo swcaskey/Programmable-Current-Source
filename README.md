@@ -3,23 +3,36 @@
 An adjustable, precision current source designed for test bench and calibration use.
 
 ## Overview
-- Generates a stable, programmable current output controlled via voltage or digital interface.
-- Demonstrates analog circuit design and control principles.
+This project implements a programmable constant-current source using **operational amplifiers**, a **MOSFET driver stage**, and **Arduino-based DAC control**.  
+It allows user-defined current settings via the Arduino Serial Monitor and regulates output through a feedback loop.
 
-## Circuit Design
-- Op-amp and MOSFET feedback loop regulating output current.
-- Output range: 0 – 200 mA.
-- Configurable via potentiometer or DAC voltage input.
-- Based on Howland current pump topology.
+- **Output Range:** 0 – 10 mA  
+- **Setpoint Resolution:** 0.5 mA  
+- **Regulation Accuracy:** ±0.25 mA  
+- **Voltage Limit:** 15 V  
 
-## Validation
-- Simulated in LTSpice to confirm linear current regulation.
-- Tested on breadboard with oscilloscope and multimeter verification.
-- Stable operation across 5 – 15 V supply range.
+## Design Concept
+- **Architecture:** OP-AMP–MOSFET feedback topology with a precision current-sense resistor.  
+- **Control Logic:** Arduino generates a voltage reference (DAC output) proportional to the user’s desired current.  
+- **Feedback Loop:** The op-amp adjusts the MOSFET gate voltage to maintain constant current through the load.  
+- **Measurement:** The Arduino measures voltage across the sense resistor (≤1 Ω) via ADC for closed-loop feedback.  
+- **Simulation:** Verified circuit behavior and linearity in **LTSpice** prior to hardware testing.
+
+## Testing and Validation
+- Tested across multiple resistive loads (24 Ω – 1.3 kΩ) and an LED to validate constant-current behavior.  
+- Measured stability and response with oscilloscope and multimeter.  
+- Observed accurate regulation across full output range (0–10 mA).  
+- System remained stable for supply voltages between 5–15 V. 
+
+## Challenges and Iteration
+- Initial issues with DAC bit alignment caused inaccurate current regulation.  
+- Resolved by debugging PWM-to-voltage scaling in simulation and hardware.  
+- Explored loop timing effects — discovered that faster load changes (≥100 Hz) exceeded the control loop’s update rate.  
 
 ## Documentation
 Testing photos, schematic captures, and performance data:  
 - [Google Photos Album](https://photos.app.goo.gl/ThNHLy9iuzCLFQ5C7)
+- [Writeup](https://docs.google.com/document/d/109mvFCIYR1HQHMP3YRnqCsOd_dF2gdiRvDrdnpQr6D8/edit?usp=sharing)
 
 ## Author
 Created by **Seth Caskey** — Rutgers University, 2025.
