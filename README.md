@@ -16,11 +16,11 @@ It allows user-defined current settings via the Arduino Serial Monitor and regul
 - **Control Logic:** Arduino generates a voltage reference (DAC output) proportional to the user’s desired current.  
 - **Feedback Loop:** The op-amp adjusts the MOSFET gate voltage to maintain constant current through the load.  
 - **Measurement:** The Arduino measures voltage across the sense resistor (≤1 Ω) via ADC for closed-loop feedback.  
-- **Simulation:** Verified circuit behavior and linearity in **LTSpice** prior to hardware testing.
+- **Simulation:** Verified circuit behavior and linearity in **LTSpice** and **AutoDesk (TinkerCAD web) Arduino Sim** prior to hardware testing.
 
 ## Testing and Validation
-- Tested across multiple resistive loads (24 Ω – 1.3 kΩ) and an LED to validate constant-current behavior.  
-- Measured stability and response with oscilloscope and multimeter.  
+- Tested across multiple resistive loads (24 Ω – 1.3 kΩ) and an LED & IDE terminal to validate constant-current behavior.  
+- Measured stability and response with oscilloscope and multimeter.
 - Observed accurate regulation across full output range (0–10 mA).  
 - System remained stable for supply voltages between 5–15 V. 
 
