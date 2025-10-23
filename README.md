@@ -35,4 +35,4 @@ Testing photos, schematic captures, and performance data:
 - [Writeup](https://docs.google.com/document/d/109mvFCIYR1HQHMP3YRnqCsOd_dF2gdiRvDrdnpQr6D8/edit?usp=sharing)
 
 ## Author
-Created by **Seth Caskey** — Rutgers University, 2025.
+Created by **Seth Caskey** — Rutgers University, 2024.
